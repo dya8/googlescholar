@@ -1,0 +1,28 @@
+:root{
+  --bg:#fbf8f1; --surface:#fffdf8; --ink:#1c2a3e; --muted:#5f6b7c; --accent:#3b5f8f; --accent-dark:#2b4870;
+  --border:#e2dccd; --link:#25508f; --serif:'Source Serif 4',Georgia,serif; --display:'Cormorant Garamond',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.55}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+button{font-family:var(--sans);cursor:pointer}
+.page-enter{animation:fade .45s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* search bar */
+.searchbar{position:relative;display:flex;align-items:center;gap:6px;width:100%;background:var(--surface);
+  border:1px solid var(--border);border-radius:8px;padding:6px 6px 6px 14px;transition:border-color .2s,box-shadow .2s}
+.searchbar:hover{border-color:#cdc5b1}
+.searchbar:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(59,95,143,.15)}
+.searchbar.has-error{border-color:#a8473d}
+.searchbar input{flex:1;min-width:0;border:0;background:transparent;font:400 1.05rem var(--sans);color:var(--ink);padding:10px 6px;outline:0}
+.searchbar input::placeholder{color:#8f97a3}
+.searchbar-icon{color:var(--muted);flex:none}
+.icon-btn{border:0;background:transparent;color:var(--muted);display:grid;place-items:center;padding:8px;border-radius:50%}
+.icon-btn:hover{background:#efe9da;color:var(--ink)}
+.search-btn{border:0;background:var(--accent);color:#fff;font:500 .92rem var(--sans);padding:10px 20px;border-radius:6px;transition:background .2s}
+.search-btn:hover{background:var(--accent-dark)}
+.searchbar-error{position:absolute;left:14px;top:calc(100% + 6px);margin:0;font:400 .85rem var(--sans);color:#a8473d}
+.linkbtn{display:inline-block;text-decoration:none;margin-top:24px}
